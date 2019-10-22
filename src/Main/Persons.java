@@ -10,13 +10,13 @@ public class Persons extends Record {
     private String email;
 
     public Persons() {
-        counter ++;
+        counter++;
         this.id = counter;
     }
 
 
-
-    public void askInfo(){
+    @Override
+    public void askInfo() {
         System.out.print("Name> ");
         name = Main.scan.next();
         System.out.print("Surname> ");
@@ -29,12 +29,18 @@ public class Persons extends Record {
 
     }
 
+    @Override
+   public boolean contains(String str) {
+        return super.contains(str)
+                ||name.contains(str)
+                || surname.contains(str)
+                || phone.contains(str)
+                || email.contains(str);
+    }
+
     public int getId() {
         return id;
     }
-
-
-
 
 
     public String getName() {
@@ -46,7 +52,6 @@ public class Persons extends Record {
     }
 
 
-
     public String getSurname() {
         return surname;
     }
@@ -56,7 +61,6 @@ public class Persons extends Record {
     }
 
 
-
     public String getPhone() {
         return phone;
     }
@@ -64,6 +68,7 @@ public class Persons extends Record {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
     public String getEmail() {
         return email;
     }

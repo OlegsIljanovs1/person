@@ -9,6 +9,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+        scan.useDelimiter("\n");
         System.out.println("Enter a command. Type help for help");
         for (; ; ) {
             System.out.println("> ");
@@ -28,47 +29,43 @@ public class Main {
                 case "list":
                     List();
                     break;
-                case "note":
-                    Note();
-                    break;
+                case "search":
+                    findRecords();
                 default:
                     System.out.println("Error: Unknown command");
             }
         }
     }
 
+    private static void findRecords() {
+
+
+
+    }
+
+
     private static void createRecord() {
         System.out.println("type> ");
         String type = scan.next();
         switch (type) {
             case "person":
-                createPerson();
+                createRecord1(new Persons());
                 break;
+            case "note":
+                createRecord1(new Note());
+                break;
+            case "alarm":
+                createRecord1(new Alarm());
+                break;
+
             default:
                 System.out.println("Unknown record type");
         }
     }
 
-    private static void createPerson() {
-
-
-        Persons p = new Persons();
-        p.askInfo();
 
 
 
-        personRecord.add(p);
-
-
-    }
-
-    private static void Note(){
-        Note n = new Note();
-        n.Asktext();
-        personRecord.add(n);
-
-
-    }
 
     private static void List() {
         for (Record p : personRecord) {
@@ -82,12 +79,18 @@ public class Main {
 
 
         }
+        }
 
 
-    }
 
     private static void showHelp() {
         System.out.println("Hello world");
+
+
+    }
+    private static void createRecord1(Record r){
+        r.askInfo();
+        personRecord.add(r);
 
 
     }

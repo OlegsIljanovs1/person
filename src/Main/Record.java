@@ -1,6 +1,6 @@
 package Main;
 
-public class Record {
+public abstract class Record {
     private static int counter = 0;
 
     private int id;
@@ -10,6 +10,14 @@ public class Record {
         counter ++;
         this.id = counter;
     }
+
+    public abstract void askInfo();
+
+
+ public boolean contains(String str){
+     String strID = Integer.toString(id);
+     return strID.contains(str);
+ }
 
     public int getId(){return id; }
 }
