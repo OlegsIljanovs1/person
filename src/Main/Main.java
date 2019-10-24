@@ -41,6 +41,7 @@ public class Main {
         }
     }
 
+
     private static void deleteRecord() {
         List();
         System.out.print("\nEnter id to delete> ");
@@ -85,6 +86,8 @@ public class Main {
                 break;
             case "alarm":
                 createRecord1(new Alarm());
+            case "reminder":
+                createRecord1(new Reminder());
                 break;
 
 
@@ -92,7 +95,6 @@ public class Main {
                 System.out.println("Unknown record type");
         }
     }
-
 
 
 
