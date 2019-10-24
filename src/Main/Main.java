@@ -31,14 +31,43 @@ public class Main {
                     break;
                 case "search":
                     findRecords();
+                    break;
+                case"delete":
+                    deleteRecord();
+                    break;
                 default:
                     System.out.println("Error: Unknown command");
             }
         }
     }
 
-    private static void findRecords() {
+    private static void deleteRecord() {
+        List();
+        System.out.print("\nEnter id to delete> ");
+        int removeID = scan.nextInt();
 
+        for(int i=0; i < personRecord.size(); i++){
+
+            Record r = personRecord.get(i);
+
+            if(removeID == r.getId()){
+                personRecord.remove(i);
+
+                break;
+
+            }
+        }
+
+    }
+
+    private static void findRecords() {
+        System.out.print("substring> ");
+        String str = scan.next();
+        for (Record r : personRecord) {
+            if (r.contains(str)){
+                System.out.println(r);
+            }
+        }
 
 
     }
@@ -57,6 +86,7 @@ public class Main {
             case "alarm":
                 createRecord1(new Alarm());
                 break;
+
 
             default:
                 System.out.println("Unknown record type");
@@ -94,7 +124,6 @@ public class Main {
 
 
     }
-
 
 
 

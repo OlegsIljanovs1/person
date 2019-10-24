@@ -21,9 +21,9 @@ public class Persons extends Record {
         name = Main.scan.next();
         System.out.print("Surname> ");
         surname = Main.scan.next();
-        System.out.println("Phone> ");
+        System.out.print("Phone> ");
         phone = Main.scan.next();
-        System.out.println("Email> ");
+        System.out.print("Email> ");
         email = Main.scan.next();
 
 

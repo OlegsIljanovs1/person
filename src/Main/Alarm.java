@@ -28,7 +28,7 @@ public class Alarm extends Note {
                 '}';
     }
 
-    boolean contains(String str) {
+    public boolean contains(String str) {
         return super.contains(str);
         }
 
