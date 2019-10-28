@@ -1,6 +1,8 @@
 package Main;
 
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
@@ -35,11 +37,30 @@ public class Main {
                 case"delete":
                     deleteRecord();
                     break;
+                case"remove":
+                    removeRecord();
+                    break;
                 default:
                     System.out.println("Error: Unknown command");
             }
         }
     }
+
+    private static void removeRecord() {
+        System.out.print("remove> ");
+        String remove = scan.next();
+
+        Iterator<Record> removeIterator = personRecord.iterator();
+        while(removeIterator.hasNext()) {
+            Record nextRecord = removeIterator.next();
+            if(nextRecord.contains(remove));
+            personRecord.remove(nextRecord);
+        }
+
+        }
+
+
+
 
 
     private static void deleteRecord() {

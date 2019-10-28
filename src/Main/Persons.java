@@ -1,5 +1,9 @@
 package Main;
 
+import javax.xml.namespace.QName;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Persons extends Record {
     private static int counter = 0;
 
@@ -87,6 +91,9 @@ public class Persons extends Record {
                 ", email='" + email + '\'' +
                 '}';
     }
+
+    String word = toString();
+
 }
 
 
