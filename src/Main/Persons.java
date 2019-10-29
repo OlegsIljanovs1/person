@@ -21,14 +21,10 @@ public class Persons extends Record {
 
     @Override
     public void askInfo() {
-        System.out.print("Name> ");
-        name = Main.scan.next();
-        System.out.print("Surname> ");
-        surname = Main.scan.next();
-        System.out.print("Phone> ");
-        phone = Main.scan.next();
-        System.out.print("Email> ");
-        email = Main.scan.next();
+        name = Asker.askString("Name> ");
+        surname = Asker.askString("Surname> ");
+        phone = Asker.askString("phone> ");
+        email = Asker.askString("email> ");
 
 
     }

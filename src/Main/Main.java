@@ -6,17 +6,16 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
-    static final Scanner scan = new Scanner(System.in);
     static ArrayList<Record> personRecord = new ArrayList<>();
 
 
     public static void main(String[] args) {
-        scan.useDelimiter("\n");
+
         System.out.println("Enter a command. Type help for help");
         for (; ; ) {
             System.out.println("> ");
 
-            String cmd = scan.next();
+            String cmd = Asker.askString("cmd");
 
             switch (cmd) {
                 case "exit":
@@ -47,8 +46,7 @@ public class Main {
     }
 
     private static void removeRecord() {
-        System.out.print("remove> ");
-        String remove = scan.next();
+        String remove = Asker.askString("remove> ");
 
         Iterator<Record> removeIterator = personRecord.iterator();
         while(removeIterator.hasNext()) {
@@ -65,8 +63,7 @@ public class Main {
 
     private static void deleteRecord() {
         List();
-        System.out.print("\nEnter id to delete> ");
-        int removeID = scan.nextInt();
+        int removeID = Asker.askInt("enter id to delete> ");
 
         for(int i=0; i < personRecord.size(); i++){
 
@@ -83,8 +80,7 @@ public class Main {
     }
 
     private static void findRecords() {
-        System.out.print("substring> ");
-        String str = scan.next();
+        String str = Asker.askString("Substring> ");
         for (Record r : personRecord) {
             if (r.contains(str)){
                 System.out.println(r);
@@ -96,8 +92,7 @@ public class Main {
 
 
     private static void createRecord() {
-        System.out.println("type> ");
-        String type = scan.next();
+        String type = Asker.askString("type> ");
         switch (type) {
             case "person":
                 createRecord1(new Persons());

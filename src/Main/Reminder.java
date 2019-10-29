@@ -1,12 +1,7 @@
 package Main;
 
-import Main.Alarm;
-import Main.Main;
-
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class Reminder extends Alarm {
     public static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("dd.MM.uuuu");
@@ -15,8 +10,7 @@ public class Reminder extends Alarm {
     @Override
     public void askInfo() {
         super.askInfo();
-        System.out.println("Date> ");
-        String  strDate = Main.scan.next();
+        String  strDate = Asker.askString("Date> ");
         date = LocalDate.parse(strDate, DATE_FORMAT);
     }
 
@@ -34,8 +28,8 @@ public class Reminder extends Alarm {
         return "Note{" +
                 "id=" + getId() +
                 ", text='" + getText() + '\'' +
-                ", time=" + time.format(TIME_FORMAT) +
-                ", date=" + date.format(DATE_FORMAT) +
+                ", time=" + time.format(Asker.TIME_FORMAT) +
+                ", date=" + date.format(Asker.TIME_FORMAT) +
                 '}';
     }
     @Override
